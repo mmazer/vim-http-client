@@ -19,7 +19,7 @@ GLOBAL_VAR_REGEX = re.compile('^# ?(\$[^$ ]+)\\s*=\\s*(.+)$')
 FILE_REGEX = re.compile("!((?:file)|(?:(?:content)))\((.+)\)")
 JSON_REGEX = re.compile("(javascript|json)$", re.IGNORECASE)
 
-verify_ssl = True if vim.eval('g:http_client_verify_ssl') == '1' else False
+verify_ssl = vim.eval('g:http_client_verify_ssl') == '1'
 
 
 def replace_vars(string, variables):
